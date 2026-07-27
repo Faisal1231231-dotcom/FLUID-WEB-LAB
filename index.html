@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Web Labs | Elite Web Architecture & Custom Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        charcoal: '#0B0D12',
+                        darkcard: '#121620',
+                        neoncyan: '#00f0ff',
+                    },
+                    boxShadow: {
+                        cyanglow: '0 0 25px rgba(0, 240, 255, 0.25)',
+                        cyanbright: '0 0 35px rgba(0, 240, 255, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0D12;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(18, 22, 32, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.7);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+        }
+        .glow-text {
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- WATERMARK BANNER -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-amber-500 text-black text-center text-xs md:text-sm font-extrabold py-2 px-4 shadow-2xl tracking-wide flex items-center justify-center gap-2 uppercase">
+        
+    </div>
+
+    <!-- MAIN CONTAINER WITH TOP PADDING FOR FIXED BANNER -->
+    <div class="pt-10 min-h-screen flex flex-col justify-between">
+
+        <!-- HEADER / NAVIGATION -->
+        <header class="sticky top-9 z-40 bg-[#0B0D12]/80 backdrop-blur-xl border-b border-cyan-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-400 font-black text-xl shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                        F
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-white block leading-none">Fluid Web Labs</span>
+                        <span class="text-[10px] text-cyan-400 font-semibold uppercase tracking-widest block mt-1">Elite Web Architecture</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#portfolio" class="hover:text-cyan-400 transition-colors">Demos & Work</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">Why Us</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+
+                <a href="https://wa.me/971547445429?text=Hello,%20I%20want%20to%20order%20from%20your%20website." 
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 text-black font-bold text-sm hover:bg-cyan-400 transition-all transform hover:-translate-y-0.5 shadow-[0_0_20px_rgba(0,240,255,0.4)]">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Order Custom Build</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-16 pb-20 overflow-hidden">
+            <!-- Background Glow Gradients -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-8 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    Fluid Web Labs Architecture
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                    Elite Web Architecture & <br class="hidden sm:inline"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-500 glow-text">
+                        Custom Development
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-4 font-normal">
+                    We build custom, lightning-fast web storefronts for businesses in 8 seconds. Test our live interactive builds below.
+                </p>
+
+                <h2 class="text-xl sm:text-2xl font-bold text-cyan-400 mb-10 tracking-wide">
+                    Select Your Industry To View Demo
+                </h2>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://wa.me/971547445429?text=Hello,%20I%20want%20to%20order%20from%20your%20website." 
+                       class="px-8 py-4 rounded-xl bg-cyan-500 text-black font-extrabold text-base hover:bg-cyan-400 transition-all shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:shadow-[0_0_35px_rgba(0,240,255,0.6)] transform hover:-translate-y-0.5">
+                        Start Your Custom Build (WhatsApp)
+                    </a>
+                    <a href="https://www.paypal.com/paypalme/my/profile" target="_blank"
+                       class="px-8 py-4 rounded-xl bg-darkcard border border-cyan-500/40 text-white font-bold text-base hover:border-cyan-400 hover:bg-black/50 transition-all shadow-lg">
+                        PayPal Instant Checkout
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO GRID SECTION -->
+        <section id="portfolio" class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">Interactive Project Portfolio</h3>
+                    <p class="text-slate-400 text-sm">Click below to experience live interactive builds in real-time.</p>
+                </div>
+
+                <!-- 3-CARD GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- CARD 1 -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                                    Healthcare & Aesthetics
+                                </span>
+                                <div class="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold text-xs">
+                                    01
+                                </div>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                                Aura Medical Clinic
+                            </h4>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                                High-speed booking storefront for luxury aesthetics. Designed for high conversion rates and seamless client appointment scheduling.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-4 border-t border-cyan-500/10">
+                            <a href="https://client-748615.netlify.app/" target="_blank" 
+                               class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 text-black font-extrabold text-sm hover:bg-cyan-400 transition-all shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                                <span>Live Preview</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.paypal.com/paypalme/my/profile" target="_blank"
+                               class="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-black/40 border border-slate-700 text-slate-300 font-semibold text-xs hover:border-cyan-400 hover:text-white transition-all">
+                                <span>Order Similar System</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                                    Hospitality & Food
+                                </span>
+                                <div class="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold text-xs">
+                                    02
+                                </div>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                                Burger Hub Online
+                            </h4>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                                Interactive restaurant ordering page with WhatsApp checkout. Features instant menu selection and direct order dispatch.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-4 border-t border-cyan-500/10">
+                            <a href="https://client-878792.netlify.app/" target="_blank" 
+                               class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 text-black font-extrabold text-sm hover:bg-cyan-400 transition-all shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                                <span>Live Preview</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.paypal.com/paypalme/my/profile" target="_blank"
+                               class="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-black/40 border border-slate-700 text-slate-300 font-semibold text-xs hover:border-cyan-400 hover:text-white transition-all">
+                                <span>Order Similar System</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                                    Gaming & Digital Goods
+                                </span>
+                                <div class="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold text-xs">
+                                    03
+                                </div>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                                Kaqx Script Emporium
+                            </h4>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                                Dark-mode digital storefront for gaming scripts and bots. Cyberpunk aesthetic engineered for high digital product output.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3 pt-4 border-t border-cyan-500/10">
+                            <a href="https://client-989663.netlify.app/" target="_blank" 
+                               class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 text-black font-extrabold text-sm hover:bg-cyan-400 transition-all shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                                <span>Live Preview</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                            <a href="https://www.paypal.com/paypalme/my/profile" target="_blank"
+                               class="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-black/40 border border-slate-700 text-slate-300 font-semibold text-xs hover:border-cyan-400 hover:text-white transition-all">
+                                <span>Order Similar System</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US & METRICS SECTION -->
+        <section id="about" class="py-16 bg-[#0E1118]/80 border-y border-cyan-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">Architectural Standard</span>
+                        <h3 class="text-3xl font-extrabold text-white mb-6">Engineered for Rapid Conversions & Unmatched Velocity</h3>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            At <strong class="text-cyan-400">Fluid Web Labs</strong>, we eliminate redundant bloat to deliver bespoke, hyper-optimized web experiences. We build custom, lightning-fast web storefronts for businesses in 8 seconds, ensuring your users never bounce due to lag.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-400 text-xs mt-0.5">✓</div>
+                                <span class="text-slate-200 text-sm">Glassmorphic & Cyberpunk Inspired UI Systems</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-400 text-xs mt-0.5">✓</div>
+                                <span class="text-slate-200 text-sm">Direct WhatsApp & Automated Instant Checkout Integration</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-400 text-xs mt-0.5">✓</div>
+                                <span class="text-slate-200 text-sm">Zero-Latency Mobile Responsive Architecture</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-4xl font-extrabold text-cyan-400 block mb-2">8s</span>
+                            <span class="text-xs uppercase text-slate-400 font-semibold tracking-wider">Deployment Standard</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-4xl font-extrabold text-cyan-400 block mb-2">100%</span>
+                            <span class="text-xs uppercase text-slate-400 font-semibold tracking-wider">Custom Codebase</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-4xl font-extrabold text-cyan-400 block mb-2">0.1s</span>
+                            <span class="text-xs uppercase text-slate-400 font-semibold tracking-wider">Load Speed Focus</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <span class="text-4xl font-extrabold text-cyan-400 block mb-2">24/7</span>
+                            <span class="text-xs uppercase text-slate-400 font-semibold tracking-wider">Client Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & INQUIRY FORM -->
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                    <div class="absolute -right-12 -top-12 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                    <div class="text-center mb-10">
+                        <h3 class="text-3xl font-extrabold text-white mb-3">Initiate Your Custom Build</h3>
+                        <p class="text-slate-400 text-sm">Send us your exact requirements. We respond back instantly with your custom architecture strategy.</p>
+                    </div>
+
+                    <form action="https://formsubmit.co/elbashir886@gmail.com" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="New Order Inquiry!">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Full Name</label>
+                                <input type="text" name="name" required placeholder="John Doe" 
+                                       class="w-full bg-black/60 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Email Address</label>
+                                <input type="email" name="email" required placeholder="client@company.com" 
+                                       class="w-full bg-black/60 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Industry / Project Type</label>
+                            <select name="industry" class="w-full bg-black/60 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm">
+                                <option value="Aesthetics & Medical">Aesthetics & Medical Clinic</option>
+                                <option value="Restaurant & Food">Restaurant & Ordering Page</option>
+                                <option value="Digital Goods & Gaming">Gaming & Digital Storefront</option>
+                                <option value="Other Custom Web App">Other Custom Web Architecture</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Project Brief & Details</label>
+                            <textarea name="message" rows="4" required placeholder="Describe your web storefront specifications..." 
+                                      class="w-full bg-black/60 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full py-4 rounded-xl bg-cyan-500 text-black font-extrabold text-base hover:bg-cyan-400 transition-all shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:shadow-[0_0_35px_rgba(0,240,255,0.6)] transform hover:-translate-y-0.5">
+                            Submit Order Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-black/90 border-t border-cyan-500/10 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="text-lg font-extrabold text-white">Fluid Web Labs</span>
+                    <p class="text-xs text-slate-400 mt-1">Elite Web Architecture & Custom Development © 2025</p>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <a href="https://wa.me/971547445429?text=Hello,%20I%20want%20to%20order%20from%20your%20website." class="text-xs font-bold text-cyan-400 hover:underline">
+                        WhatsApp Orders
+                    </a>
+                    <a href="https://www.paypal.com/paypalme/my/profile" target="_blank" class="text-xs font-bold text-slate-300 hover:text-white hover:underline">
+                        PayPal Checkout
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
